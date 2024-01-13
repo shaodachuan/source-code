@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.red2222.ch23.mapper.UserMapper">
+    
+    
+    <!-- 插入用户信息 -->
+    <insert id="insertUser" parameterType="com.red2222.ch23.pojo.User">
+        insert into t_user values(null,'admin','123456',23,'男','admin@qq.com')
+    </insert>
+
+
+    <!-- selectUserById -->
+    <select id="selectUserById">
+        select * from t_user wherer id = #{id}
+    </select>
+</mapper>
