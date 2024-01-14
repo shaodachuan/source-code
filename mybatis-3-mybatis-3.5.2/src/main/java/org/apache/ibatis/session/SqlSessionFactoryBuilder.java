@@ -32,7 +32,10 @@ import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
  * 1. 解析Confiruation
  * 2. 创建SqlSessionFactory，避免了 用户 直接调用 XMLConfigBuild, 然后调用 XmlConfigBuilder.parse() 方法
  *
+ * @see XMLConfigBuilder#parse()
+ * @see Configuration
  * @see SqlSessionFactory
+ * @see DefaultSqlSessionFactory
  */
 public class SqlSessionFactoryBuilder {
 
