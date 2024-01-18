@@ -3,12 +3,14 @@ package com.red2222.ch23.test;
 import com.red2222.ch23.mapper.UserMapper;
 import com.red2222.ch23.pojo.User;
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * 哈哈哈哈
@@ -27,18 +29,23 @@ public class MybatisTest {
         SqlSession sqlSession = ssf.openSession(true);
         // SqlSession sqlSession = ssf.openSession(true);
         // 获取Mapper接口对象
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+//        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+//
+//
+//        // 使用Mapper接口，执行映射文件的SQL
+//        int count = userMapper.insertUser(new User());
+//
+//
+//        // 因为使用了JDBC事务管理器，需要提交事务
+//        //sqlSession.rollback();
+//
+//
+//        System.out.println("执行插入，影响的行数:" + count);
 
 
-        // 使用Mapper接口，执行映射文件的SQL
-        int count = userMapper.insertUser(new User());
-
-
-        // 因为使用了JDBC事务管理器，需要提交事务
-        //sqlSession.rollback();
-
-
-        System.out.println("执行插入，影响的行数:" + count);
+      // 测试1
+      int i = sqlSession.insert("com.red2222.ch23.mapper.UserMapper.selectList");
+      System.out.println(i);
 
     }
 }

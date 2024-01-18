@@ -18,4 +18,8 @@
     <select id="selectUserById">
         select * from t_user wherer id = #{id}
     </select>
+
+    <select id="selectList" resultType="com.red2222.ch23.pojo.User">
+        delete from  t_user where id = 14
+    </select>
 </mapper>
